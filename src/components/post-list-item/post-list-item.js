@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 
+import '../post-list-item/post-list-item.css';
+
 export default class PostListItem extends Component {
     constructor(props){
         super(props);
@@ -26,7 +28,7 @@ export default class PostListItem extends Component {
 
 
     render() {
-        const {label} = this.props;
+        const {label, onDelete} = this.props;
         const {follow, like} = this.state;
         let classNames = 'app-list-item d-flex justify-content-between';
         if (follow) {
@@ -52,7 +54,8 @@ export default class PostListItem extends Component {
                 </button>
                 <button 
                 type="button" 
-                className="btn-trash btn-sm">
+                className="btn-trash btn-sm"
+                onClick={onDelete}>
                     <i className="fa fa-trash-o"></i>
                 </button>
                 <i className="fa fa-heart"></i>
