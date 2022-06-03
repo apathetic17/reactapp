@@ -3,7 +3,10 @@ import React from "react";
 import '../app-header/app-header.css';
 import styled from 'styled-components';
 
-const Header = styled.div`
+const Header = styled.div
+
+
+`
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -21,11 +24,11 @@ const Header = styled.div`
 
 `
 
-const AppHeader = () => {
+const AppHeader = ({liked, allPosts}) => {
     return (
         <Header as='a'>
             <h1>React Developer Test</h1>
-            <h2>5 записей, из них добавлено в корзину 0</h2>
+            <h2>{allPosts} записей, из них добавлено в корзину {liked}</h2>
         </Header>
     )
 }
